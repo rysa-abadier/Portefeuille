@@ -1,0 +1,208 @@
+body{
+    font-family: 'Yu Gothic', Monaco, 'Courier New', monospace;
+    background-color: floralwhite;
+    color: saddlebrown;
+    margin: 0;
+}
+
+nav {
+    padding: 0px 15px;
+    margin: 0;
+    overflow: hidden;
+    background-color: sienna;
+    position: sticky;
+    top: 0;
+}
+
+nav a{
+    float: left;
+    color: floralwhite;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover:not(.active) {
+    background-color: blanchedalmond;
+    color: sienna;
+}
+
+nav a.active {
+    background-color: saddlebrown;
+    color: floralwhite;
+}
+
+.link {
+    color: saddlebrown;
+    text-decoration: underline;
+}
+
+a.link:hover {
+    color: peru;
+}
+
+a.link:active {
+    color: blanchedalmond;
+}
+
+footer {
+    background-color: sienna;
+    color: floralwhite;
+    text-align: center;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: floralwhite;
+}
+
+footer a:hover {
+    color: blanchedalmond;
+}
+
+header {
+    padding: 3px;
+    margin: 10px 30px;
+}
+
+header h2 {
+    font-family: 'Yu Gothic', Monaco, 'Courier New', monospace;
+    font-size: 30px;
+    font-weight: 550;
+    text-transform: uppercase;
+    margin: 10px 15px;
+    letter-spacing: 2px;
+}
+
+
+div.picture {
+    border: 1.5px dashed saddlebrown;
+    border-radius: 50px;
+    margin: 5px 10px 25px 45px;
+    width: 250px;
+    align-content: center;
+    display: inline;
+    float: left;
+    position: initial;
+}
+
+div img {
+    border: 2px solid saddlebrown;
+    border-spacing: 20px;
+    margin: 15px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+div.picture p {
+    text-align: center;
+    padding: 2px;
+    margin: 0px 15px 15px 15px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+div.info {
+    padding: 3px;
+    margin-left: 5px;
+    margin-right: 25px;
+    display: block;
+}
+
+section {
+    padding: 3px;
+    margin: 0;
+}
+
+section h2 {
+    font-family: Monaco, "Courier New", monospace;
+    border: 1px solid sienna;
+    border-radius: 15px;
+    box-shadow: 3px 3px;
+    margin: 0;
+    padding: 5px 5px 5px 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    min-width: 73.9%;
+}
+
+.metext {
+    text-indent: 25px; 
+    text-align: justify;
+    margin-left: 325px;
+    padding-right: 10px;
+}
+
+.melist {
+    list-style-type: circle;
+    margin-left: 310px;
+}
+
+
+h3 {
+    font-family: 'Yu Gothic', Monaco, 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 550;
+    margin: 0 15px 15px 35px;
+    letter-spacing: 2px;
+    border: 1px solid sienna;
+    border-radius: 15px;
+    box-shadow: 3px 3px;
+    padding: 5px 5px 5px 15px;
+    letter-spacing: 1px;
+}
+
+
+.sec {
+    margin: 25px 30px;
+    border: 1px solid sienna;
+    border-radius: 15px;
+    box-shadow: 3px 3px;
+    padding: 5px;
+}
+
+.name {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 3px 3px 3px 15px;
+}
+
+.text {
+    margin: 0 15px;
+    padding: 2px;
+    text-align: justify;
+    text-indent: 25px;
+}
+
+h4 {
+    font-family: 'Yu Gothic', Monaco, 'Courier New', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px 0 10px 20px;
+}
+
+img.cover {
+    float: right;
+    margin: 0 15px;
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: normal;
+    width: 115px;
+    height: auto;
+    border: none;
+    border-radius: 0;
+}
+
+section span {
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+div.example {
+    display: block;
+    margin-top: 5px;
+}
