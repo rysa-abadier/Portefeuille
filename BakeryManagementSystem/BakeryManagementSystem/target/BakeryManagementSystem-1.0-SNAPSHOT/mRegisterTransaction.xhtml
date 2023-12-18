@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Transaction Registration</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="mManagerGrid.xhtml">Managers</a></li>
+                <li class="drop"><a href="mSupervisorGrid.xhtml" class="dropbtn">Supervisors</a>
+                    <div class="dropdown">
+                        <a href="mRegisterSupervisor.xhtml">Register</a>
+                        <a href="mSupervisorGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="mCustomerGrid.xhtml" class="dropbtn">Customers</a>
+                    <div class="dropdown">
+                        <a href="mRegisterCustomer.xhtml">Register</a>
+                        <a href="mCustomerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="mProductGrid.xhtml" class="dropbtn">Products</a>
+                    <div class="dropdown">
+                        <a href="mRegisterProduct.xhtml">Register</a>
+                        <a href="mProductGrid.xhtml">List</a>
+                    </div>
+                </li> 
+                <li class="drop"><a href="mTransactionsGrid.xhtml" class="dropbtn active">Transactions</a>
+                    <div class="dropdown">
+                        <a href="#" class="active">Register</a>
+                        <a href="mTransactionsGrid.xhtml">List</a>
+                        <a href="mOrderGrid.xhtml">Orders</a>
+                        <a href="mPaymentsGrid.xhtml">Payments</a>
+                    </div>
+                </li>
+                <li class="drop" style="float: right;"><a href="mAdminGrid.xhtml" class="dropbtn" style="padding: 9px 8px 4px 8px;"><img src="account icon.png" height="30px"/></a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="mAdminGrid.xhtml">Account</a>
+                        <a href="home.xhtml">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Transaction Registration</h1>
+            <h:form>
+                <table class="form">
+                    <tr>
+                        <td><h:outputLabel for="deliveryDate" value="Delivery Date" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputText id="deliveryDate"  value="#{currentTransactions.deliveryDate}" styleClass="inputText" style="width: 225px;"></h:inputText></td>
+                    </tr>
+                </table>
+                
+                <h:commandButton action="#{currentTransactions.submit()}" value="Register" styleClass="button" onclick="alertBox('Transaction succeessfully registered!')">
+                </h:commandButton>
+            </h:form>    
+        </div>
+    </h:body>
+</html>

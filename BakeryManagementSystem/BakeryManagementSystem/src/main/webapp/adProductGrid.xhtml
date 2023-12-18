@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Product List</title>
+        <link rel="stylesheet" href="style.css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li class="drop"><a href="adManagerGrid.xhtml" class="dropbtn">Managers</a>
+                    <div class="dropdown">
+                        <a href="adRegisterManager.xhtml">Register</a>
+                        <a href="adManagerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adSupervisorGrid.xhtml" class="dropbtn">Supervisors</a>
+                    <div class="dropdown">
+                        <a href="adRegisterSupervisor.xhtml">Register</a>
+                        <a href="adSupervisorGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adCustomerGrid.xhtml" class="dropbtn">Customers</a>
+                    <div class="dropdown">
+                        <a href="adRegisterCustomer.xhtml">Register</a>
+                        <a href="adCustomerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="#" class="dropbtn active">Products</a>
+                    <div class="dropdown">
+                        <a href="adRegisterProduct.xhtml">Register</a>
+                        <a href="#" class="active">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adTransactionsGrid.xhtml" class="dropbtn">Transactions</a>
+                    <div class="dropdown">
+                        <a href="adRegisterTransaction.xhtml">Register</a>
+                        <a href="adTransactionsGrid.xhtml">List</a>
+                        <a href="adOrderGrid.xhtml">Orders</a>
+                        <a href="adPaymentsGrid.xhtml">Payments</a>
+                    </div>
+                </li>
+                <li class="drop" style="float: right;"><a href="adAdminGrid.xhtml" class="dropbtn" style="padding: 9px 8px 4px 8px;"><img src="account icon.png" height="30px"/></a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="adAdminGrid.xhtml">Account</a>
+                        <a href="home.xhtml">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Product List</h1>
+            <h:form>
+                <h:dataTable binding="#{table}" value="#{currentProduct.getAll()}" var="p" styleClass="table" columnClasses="column, column, column, column, column, column, column">
+                    <h:column headerClass="head">
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{p.id}" styleClass="data"></h:outputText>
+                    </h:column>    
+                    <h:column headerClass="head">
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{p.name}"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Description</f:facet>
+                        <h:outputText value="#{p.description}"></h:outputText>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Price</f:facet>
+                        <h:outputText value="#{p.price}"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Stock Quantity</f:facet>
+                        <h:outputText value="#{p.stockQuantity}"></h:outputText>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action="#{currentProduct.edit(p.id)}" value="Update" styleClass="updatebtn"></h:commandButton>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{currentProduct.delete(p.id)}" value="Delete" styleClass="deletebtn"></h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+    </h:body>
+</html>

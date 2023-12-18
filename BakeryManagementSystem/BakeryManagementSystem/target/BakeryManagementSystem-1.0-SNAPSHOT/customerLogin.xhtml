@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="home.xhtml">Home</a></li>
+                <li class="drop"><a href="registerUser.xhtml" class="dropbtn">Register</a>
+                    <div class="dropdown">
+                        <a href="registerUser.xhtml">Customer</a>
+                        <a href="registerAdmin.xhtml">Admin</a>
+                    </div>
+                </li>
+                <li class="drop" style="float: right;"><a href="customerLogin.xhtml" class="dropbtn active">Login</a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="customerLogin.xhtml" class="active">Customer</a>
+                        <a href="adminLogin.xhtml">Admin</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Customer Login</h1>
+            <h:form>
+                <table>
+                    <tr><td style="text-align: center;"><h:outputLabel for="username" value="Username" styleClass="outputLabel"></h:outputLabel></td></tr>
+                    <tr><td style="text-align: left;"><h:inputText id="username"  value="#{currentUser.username}" styleClass="inputText" style="width: 215px;"></h:inputText></td></tr>
+                    <tr><td style="text-align: center;"><h:outputLabel for="password" value="Password" styleClass="outputLabel"></h:outputLabel></td></tr>
+                    <tr><td style="text-align: center;"><h:inputSecret id="password" value="#{currentUser.password}" styleClass="inputText" style="width: 215px;"></h:inputSecret></td></tr>
+                </table>
+                
+                <h:commandButton action="#{currentUser.loginUser()}" value="Login" styleClass="button">
+                </h:commandButton>
+            </h:form>    
+        </div>
+    </h:body>
+</html>

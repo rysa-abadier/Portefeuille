@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Supervisor List</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <script src="script.js"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li class="drop"><a href="adManagerGrid.xhtml" class="dropbtn">Managers</a>
+                    <div class="dropdown">
+                        <a href="adRegisterManager.xhtml">Register</a>
+                        <a href="adManagerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="#" class="dropbtn active">Supervisors</a>
+                    <div class="dropdown">
+                        <a href="adRegisterSupervisor.xhtml">Register</a>
+                        <a href="#" class="active">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adCustomerGrid.xhtml" class="dropbtn">Customers</a>
+                    <div class="dropdown">
+                        <a href="adRegisterCustomer.xhtml">Register</a>
+                        <a href="adCustomerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adProductGrid.xhtml" class="dropbtn">Products</a>
+                    <div class="dropdown">
+                        <a href="adRegisterProduct.xhtml">Register</a>
+                        <a href="adProductGrid.xhtml">List</a>
+                    </div>
+                </li> 
+                <li class="drop"><a href="adTransactionsGrid.xhtml" class="dropbtn">Transactions</a>
+                    <div class="dropdown">
+                        <a href="adRegisterTransaction.xhtml">Register</a>
+                        <a href="adTransactionsGrid.xhtml">List</a>
+                        <a href="adOrderGrid.xhtml">Orders</a>
+                        <a href="adPaymentsGrid.xhtml">Payments</a>
+                    </div>
+                </li> 
+                <li class="drop" style="float: right;"><a href="adAdminGrid.xhtml" class="dropbtn" style="padding: 9px 8px 4px 8px;"><img src="account icon.png" height="30px"/></a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="adAdminGrid.xhtml">Account</a>
+                        <a href="home.xhtml">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Supervisor List</h1>
+            <h:form>
+                <h:dataTable value="#{currentUser.getAllSupervisors()}" var="u" styleClass="table" columnClasses="column, column, column, column, column, column, column, column, column, column">
+                    <h:column headerClass="head">
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{u.id}" styleClass="data"></h:outputText>
+                    </h:column>    
+                    <h:column headerClass="head">
+                        <f:facet name="header">Username</f:facet>
+                        <h:outputText value="#{u.username}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Password</f:facet>
+                        <h:outputText value="#{u.password}" styleClass="data"></h:outputText>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">First Name</f:facet>
+                        <h:outputText value="#{u.firstName}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Last Name</f:facet>
+                        <h:outputText value="#{u.lastName}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Phone Number</f:facet>
+                        <h:outputText value="#{u.phoneNo}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Email</f:facet>
+                        <h:outputText value="#{u.email}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Role</f:facet>
+                        <h:outputText value="#{u.role}" styleClass="data"></h:outputText>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action="#{currentUser.editSupervisor(u.id)}" value="Update" styleClass="updatebtn"></h:commandButton>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{currentUser.deleteSupervisor(u.id)}" value="Delete" styleClass="deletebtn"></h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+
+        
+    </h:body>
+</html>

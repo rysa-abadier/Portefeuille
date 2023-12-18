@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Transactions List</title>
+        <link rel="stylesheet" href="style.css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="sManagerGrid.xhtml">Managers</a></li>
+                <li><a href="sSupervisorGrid.xhtml">Supervisors</a></li>
+                <li><a href="sCustomerGrid.xhtml">Customers</a></li>
+                <li class="drop"><a href="sProductGrid.xhtml" class="dropbtn">Products</a>
+                    <div class="dropdown">
+                        <a href="sRegisterProduct.xhtml">Register</a>
+                        <a href="sProductGrid.xhtml">List</a>
+                    </div>
+                </li> 
+                <li class="drop"><a href="#" class="dropbtn active">Transactions</a>
+                    <div class="dropdown">
+                        <a href="#" class="active">List</a>
+                        <a href="sOrderGrid.xhtml">Orders</a>
+                        <a href="sPaymentsGrid.xhtml">Payments</a>
+                    </div>
+                </li> 
+                <li class="drop" style="float: right;"><a href="sAdminGrid.xhtml" class="dropbtn" style="padding: 9px 8px 4px 8px;"><img src="account icon.png" height="30px"/></a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="sAdminGrid.xhtml">Account</a>
+                        <a href="home.xhtml">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Transaction List</h1>
+            <h:form>
+                <h:dataTable binding="#{table}" value="#{currentTransactions.getAll()}" var="t" styleClass="table" columnClasses="column, column, column, column, column, column, column, column">
+                    <h:column headerClass="head">
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{t.id}"></h:outputText>
+                    </h:column>    
+                    <h:column headerClass="head">
+                        <f:facet name="header">Payment ID</f:facet>
+                        <h:outputText value="#{t.paymentId}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Customer ID</f:facet>
+                        <h:outputText value="#{t.customerId}" styleClass="data"></h:outputText>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Delivery Date</f:facet>
+                        <h:outputText value="#{t.deliveryDate}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Date Ordered</f:facet>
+                        <h:outputText value="#{t.dateOrdered}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action="#{currentTransactions.edit(t.id)}" value="Update" styleClass="updatebtn"></h:commandButton>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{currentTransactions.delete(t.id)}" value="Delete" styleClass="deletebtn"></h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+    </h:body>
+</html>

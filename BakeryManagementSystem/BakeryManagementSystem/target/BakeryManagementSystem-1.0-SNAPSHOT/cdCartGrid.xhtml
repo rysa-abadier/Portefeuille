@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Cart Data Grid</title>
+        <link rel="stylesheet" href="style.css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="cdProductGrid.xhtml">Products</a></li>
+                <li class="drop" style="float: right;"><a href="cdAccountGrid.xhtml" class="dropbtn" style="padding: 9px 8px 4px 8px;"><img src="account icon.png" height="30px"/></a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="cdAccountGrid.xhtml">Account</a>
+                        <a href="cdTransactionsGrid.xhtml">Transactions</a>
+                        <a href="home.xhtml">Logout</a>
+                    </div>
+                </li> 
+                <li style="float: right;"><a href="#" class="active">Cart</a></li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Cart List</h1>
+            <h:form>
+                <h:dataTable binding="#{table}" value="#{currentCart.getAll()}" var="c" styleClass="table" columnClasses="column, column, column, column, column">
+                    <h:column headerClass="head">
+                        <f:facet name="header">Customer ID</f:facet>
+                        <h:outputText value="#{c.customerId}" styleClass="data"></h:outputText>
+                    </h:column>    
+                    <h:column headerClass="head">
+                        <f:facet name="header">Product ID</f:facet>
+                        <h:outputText value="#{c.productId}" styleClass="data"></h:outputText>
+                    </h:column>  
+                    <h:column headerClass="head">
+                        <f:facet name="header">Quantity</f:facet>
+                        <h:outputText value="#{c.quantity}" styleClass="data"></h:outputText>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action="#{currentCart.edit(c.customerId)}" value="Update" styleClass="updatebtn"></h:commandButton>
+                    </h:column>
+                    <h:column headerClass="head">
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{currentCart.delete(c.customerId)}" value="Delete" styleClass="deletebtn"></h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+    </h:body>
+</html>

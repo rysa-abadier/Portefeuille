@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>User Edit Record</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <script src="script.js"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li class="drop"><a href="adManagerGrid.xhtml" class="dropbtn">Managers</a>
+                    <div class="dropdown">
+                        <a href="adRegisterManager.xhtml">Register</a>
+                        <a href="adManagerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adSupervisorGrid.xhtml" class="dropbtn active">Supervisors</a>
+                    <div class="dropdown">
+                        <a href="adRegisterSupervisor.xhtml">Register</a>
+                        <a href="adSupervisorGrid.xhtml" class="active">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adCustomerGrid.xhtml" class="dropbtn">Customers</a>
+                    <div class="dropdown">
+                        <a href="adRegisterCustomer.xhtml">Register</a>
+                        <a href="adCustomerGrid.xhtml">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="adProductGrid.xhtml" class="dropbtn">Products</a>
+                    <div class="dropdown">
+                        <a href="adRegisterProduct.xhtml">Register</a>
+                        <a href="adProductGrid.xhtml">List</a>
+                    </div>
+                </li> 
+                <li class="drop"><a href="adTransactionsGrid.xhtml" class="dropbtn">Transactions</a>
+                    <div class="dropdown">
+                        <a href="adRegisterTransaction.xhtml">Register</a>
+                        <a href="adTransactionsGrid.xhtml">List</a>
+                        <a href="adOrderGrid.xhtml">Orders</a>
+                        <a href="adPaymentsGrid.xhtml">Payments</a>
+                    </div>
+                </li> 
+                <li class="drop" style="float: right;"><a href="adAdminGrid.xhtml" class="dropbtn active" style="padding: 9px 8px 4px 8px;"><img src="account icon.png" height="30px"/></a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="adAdminGrid.xhtml">Account</a>
+                        <a href="home.xhtml">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <h1>Supervisor Edit</h1>
+            <h:form>
+                <table class="form">
+                    <tr>
+                        <td><h:outputLabel for="username" value="Username" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputText id="username"  value="#{editUser.username}" styleClass="inputText"></h:inputText></td>
+
+                        <td><h:outputLabel for="password" value="Password" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputSecret id="password" value="#{editUser.password}" styleClass="inputText"></h:inputSecret></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="outputLabel category" colspan="4" style="text-align: left;">Name</td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="width: 115px;"><h:outputLabel for="firstName" value="First Name" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputText id="firstName" value="#{editUser.firstName}" styleClass="inputText"></h:inputText></td>
+                        
+                        <td style="width: 100px;"><h:outputLabel for="lastName" value="Last Name" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputText id="lastName" value="#{editUser.lastName}" styleClass="inputText"></h:inputText></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="outputLabel category" colspan="4" style="text-align: left;">Contact</td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="width: 155px;"><h:outputLabel for="phoneNo" value="Phone Number" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputText id="phoneNo" value="#{editUser.phoneNo}" styleClass="inputText"></h:inputText></td>
+
+                        <td><h:outputLabel for="email" value="Email" styleClass="outputLabel"></h:outputLabel></td>
+                        <td><h:inputText id="email" value="#{editUser.email}" styleClass="inputText"></h:inputText></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="outputLabel category" colspan="4" style="text-align: left;">Role</td>
+                    </tr>
+
+                    <tr>
+                        <td><h:outputLabel for="role" value="Role" styleClass="outputLabel"></h:outputLabel></td>
+                        <td>
+                            <h:selectOneMenu id="role" value="#{editUser.role}" styleClass="inputText">
+                                <f:selectItem itemLabel="Select Role" itemValue="#{null}" />
+                                <f:selectItem itemLabel="System Admin" itemValue="SYSTEM_ADMIN" />
+                                <f:selectItem itemLabel="Manager" itemValue="MANAGER" />
+                                <f:selectItem itemLabel="Supervisor" itemValue="SUPERVISOR" />
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                </table>
+                
+                <h:commandButton action="#{currentUser.updateSupervisor(editUser)}" value="Save" styleClass="button"  onclick="alertBox('User successfully updated!')">
+                </h:commandButton>
+            </h:form>    
+        </div>
+    </h:body>
+</html>

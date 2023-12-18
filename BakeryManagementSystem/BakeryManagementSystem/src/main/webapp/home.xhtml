@@ -4,13 +4,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Home</title>
         <link rel="stylesheet" href="style.css" type="text/css"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+        <script src="script.js"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li class="drop"><a href="registerUser.xhtml" class="dropbtn">Register</a>
+                    <div class="dropdown">
+                        <a href="registerUser.xhtml">Customer</a>
+                        <a href="registerAdmin.xhtml">Admin</a>
+                    </div>
+                </li>
+                <li class="drop" style="float: right;"><a href="customerLogin.xhtml" class="dropbtn">Login</a>
+                    <div class="dropdown" style="right: 0;">
+                        <a href="customerLogin.xhtml">Customer</a>
+                        <a href="adminLogin.xhtml">Admin</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container box">
+            <div class="container box">
+                <h1 style="margin: 0;"> Welcome to the Bakery Management System!</h1>
+                <br></br>
+                <div class="row">
+                    <button class="button login"><a href="customerLogin.xhtml">Login</a></button><br/>
+                    <button class="button login"><a href="registerUser.xhtml">Register</a></button>
+                </div>
+            </div>
+            
+        </div>
+    </h:body>
 </html>
