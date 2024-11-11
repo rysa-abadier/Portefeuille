@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1710860575 source:c:\users\rysa\documents\github\portefeuille\pointofsalesystem\main.cpp
+	<iostream>
+	<fstream>
+	<windows.h>
+	<vector>
+

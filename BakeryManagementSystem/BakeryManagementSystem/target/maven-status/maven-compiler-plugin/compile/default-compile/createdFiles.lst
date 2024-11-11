@@ -4,5 +4,6 @@ com\mycompany\bakerymanagementsystem\Payments.class
 com\mycompany\bakerymanagementsystem\User.class
 com\mycompany\bakerymanagementsystem\resources\JakartaEE8Resource.class
 com\mycompany\bakerymanagementsystem\JakartaRestConfiguration.class
+com\mycompany\bakerymanagementsystem\Role.class
 com\mycompany\bakerymanagementsystem\Product.class
 com\mycompany\bakerymanagementsystem\Cart.class

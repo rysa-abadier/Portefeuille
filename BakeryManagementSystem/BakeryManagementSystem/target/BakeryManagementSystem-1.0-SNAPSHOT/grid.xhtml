@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>Customer Data Grid</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <img src="example logo.jpg" id="logo"/>
+            <ul class="navbar">
+                <li><a href="#">Dashboard</a></li>
+                <li class="drop"><a href="#" class="dropbtn active">Customers</a>
+                    <div class="dropdown">
+                        <a href="register.xhtml">Register</a>
+                        <a href="#" class="active">List</a>
+                    </div>
+                </li>
+                <li class="drop"><a href="#" class="dropbtn">Products</a>
+                    <div class="dropdown">
+                        <a href="#">Register</a>
+                        <a href="#">List</a>
+                    </div>
+                </li> 
+            </ul>
+        </div>
+        
+        <h:form>
+            <h:dataTable binding="#{table}" value="#{currentUser.getAll()}" var="u" style="border: 1px solid #482509; padding: 1%; margin: auto; border-collapse: separate; background-color: white;">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    <h:outputText value="#{u.id}" styleClass="data"></h:outputText>
+                </h:column>    
+                <h:column>
+                    <f:facet name="header">Username</f:facet>
+                    <h:outputText value="#{u.username}"></h:outputText>
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">Password</f:facet>
+                    <h:outputText value="#{u.password}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                    <h:outputText value="#{u.firstName}"></h:outputText>
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                    <h:outputText value="#{u.lastName}"></h:outputText>
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">Phone Number</f:facet>
+                    <h:outputText value="#{u.phoneNo}"></h:outputText>
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    <h:outputText value="#{u.email}"></h:outputText>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Update</f:facet>
+                    <h:commandButton action="#{currentUser.edit(u.id)}" value="Update" styleClass="button"></h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton action="#{currentUser.delete(u.id)}" value="Delete" styleClass="button"></h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>    
+    </h:body>
+</html>
