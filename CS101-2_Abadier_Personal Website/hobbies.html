@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hobbies</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <style>
+            .scroll section {
+                width: 90%;
+                margin-top: 0;
+                position: relative;
+                display: inline-flexbox;
+            }
+
+            .sample p {
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div id="menu">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a class="active" href="#">Hobbies</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>My Hobbies</h1>
+            <p>I usually...</p>
+            <div class="scroll">
+                <section class="sample" id="read">
+                    <h2>Read</h2>
+                    <p>I'm open to any kind of literature, but I'm currently focused on:</p>
+                    <ul>
+                        <li>Manga</li>
+                        <li>Manhwa</li>
+                        <li>Light Novels</li>
+                        <li>Fanfictions</li>
+                    </ul>
+                    
+                    <a href="#watch" style="float: right; margin-right: 1%;">&#10095;</a>
+                </section>
+
+                <section class="sample" id="watch">    
+                    <h2>Watch</h2>
+                    <p>I usually prefer reading since watching is time-consuming, but sometimes I still enjoy chilling and watching:</p>
+                    <ul>
+                        <li>Movies</li>
+                        <li>Series</li>
+                        <li>Anime</li>
+                        <li>KDrama</li>
+                    </ul>
+
+                    <a href="#read" style="float: left; margin-left: 1%;">&#10094;</a>
+                    <a href="#music" style="float: right; margin-right: 1%;">&#10095;</a>
+                </section>
+
+                <section class="sample" id="music">    
+                    <h2>Listen to music</h2>
+                    <p>My family is musically inclined so I became a music lover too. I enjoy all genres of music, but I'm currently into:</p>
+                    <ul>
+                        <li>Musicals</li>
+                        <li>Pop</li>
+                        <li>OPM</li>
+                    </ul>
+
+                    <p>Aside from listening, I have more fun when I try to play music using:</p>
+                    <ul>
+                        <li>Guitar</li>
+                        <li>Piano</li>
+                        <li>Ukulele</li>
+                    </ul>
+
+                    <a href="#watch" style="float: left; margin-left: 1%;">&#10094;</a>
+                </section>
+            </div>
+        </div>
+        
+        <footer>© 2024. Rysa Abadier</footer>
+    </body>
+</html>

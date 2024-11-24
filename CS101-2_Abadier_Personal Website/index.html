@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <style>
+            h2 {
+                border: 0;
+                text-align: left;
+            }
+
+            p {
+                max-width: 80%;
+                margin: auto;
+            }
+
+            .bg, .info h2{
+                max-width: 80%;
+                margin: auto;
+             }
+
+            .bg {
+                background: url('me.png');
+                background-size: 500px;
+                background-repeat: no-repeat;
+                background-position: right;
+            }
+
+            .bg p {
+                text-align: left;
+                margin: 2% 0 0;
+                width: 45%;
+                background: linear-gradient(to right, #F5F3F5, #f5f3f580); border-radius: 15px;
+                padding: 1%;
+                padding-left: 0;
+            }
+
+            .info img {
+                height: 4vw;
+                animation-name: fade;
+                animation-duration: 1.5s;
+                padding: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div id="menu">
+                <a class="active" href="#">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="hobbies.html">Hobbies</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        
+        <div class="content" style="max-width: 100%; padding: 0;">
+            <div class="bg" style="height: 500px;">
+                <div style="padding: 90px 0;">
+                    <h1 style="font-size: 4vw; margin-bottom: 0;">Rysa Abadier</h1>
+                    <h2 style="font-size: 2vw; margin-top: 0;">Programmer</h2>
+                    <b><p>A programmer who aims to explore every language to further understand computers to help make things a little bit easier.</p></b>
+                </div>
+            </div>
+
+            <div class="info" style="background: linear-gradient(#274690, #6495ED, #F5F3F5); height: 40%;">
+                <p style="color: #F5F3F5; padding: 3%; text-align: center; width: 60%;">I first learned how to program—with Python—during 1st year of high school and web development during 2nd year. It was mostly self-taught; but it was a fun experience learning and exploring how to improve the program on my own and help others to fix theirs.</p>
+
+                <h2 style="color: #F5F3F5; text-align: center;">Languages</h2>
+                <div style="width: fit-content; margin: 1% auto; padding-bottom: 5%;">
+                    <img src="Languages/c++.png">
+                    <img src="Languages/java.png">
+                    <img src="Languages/html.png">
+                    <img src="Languages/css.png">
+                    <img src="Languages/javascript.png">
+                    <img src="Languages/mysql.png">
+                    <img src="Languages/python.png">
+                </div>
+            </div>
+        </div>
+
+        <footer>© 2024. Rysa Abadier</footer>
+    </body>
+</html>
